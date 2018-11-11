@@ -11,7 +11,7 @@ public class Digitron {
     public void setOperand(double x){
         operand=x;
     }
-    public double getRez(double x){
+    public double getRez(){
         return  rezultat;
     }
     public void plus(double x){
