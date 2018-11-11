@@ -17,8 +17,8 @@ public class Controller {
     double proiz=1;
     boolean kucano=false;
 
-    boolean prvi=false;
-
+    boolean unesenPrvi=false;
+    int brojOperacije=0;
     public void nineClick(ActionEvent actionEvent) {
         input=10*input+9;
         postavi(input);
@@ -71,81 +71,135 @@ public class Controller {
     }
     private void postavi(double input){
         kucano=true;
-        prvi=true;
+       // prvi=true;
         lastNum=input;
     }
 
     public void procClick(ActionEvent actionEvent) {
 
-        }
+    }
     public void minusClick(ActionEvent actionEvent) {
         if(kucano){
-            if(prvi && !isA){rez=input; isA=true; izbor=2; textBox.setText(rez+""); input=0; return;}
-            rez-=input;
-            textBox.setText(rez+"");
+            brojOperacije++;
+            if(brojOperacije==2){
+                equals(izbor);
+                brojOperacije=1;
+            }
+            else if(brojOperacije==1){
+                rez=input;
+                textBox.setText(rez+"");
+            }
+            input=0;
         }
-        kucano=false;
-        input=0;
         izbor=2;
     }
     public void plusClick(ActionEvent actionEvent) {
         if(kucano){
-            if(prvi && !isA){rez=input; isA=true; izbor=1; textBox.setText(rez+""); input=0; return;}
-            rez+=input;
-            textBox.setText(rez+"");
+            brojOperacije++;
+            if(brojOperacije==2){
+                equals(izbor);
+                brojOperacije=1;
+            }
+            else if(brojOperacije==1){
+                rez=input;
+                textBox.setText(rez+"");
+            }
+            input=0;
         }
-        kucano=false;
-        input=0;
         izbor=1;
     }
     public void productClick(ActionEvent actionEvent) {
         if(kucano){
-            if(prvi && !isA){rez=input; isA=true; izbor=3;textBox.setText(rez+""); input=0; return;}
-            rez*=input;
-            textBox.setText(rez+"");
+            brojOperacije++;
+            if(brojOperacije==2){
+                equals(izbor);
+                brojOperacije=1;
+            }
+            else if(brojOperacije==1){
+                rez=input;
+                textBox.setText(rez+"");
+            }
+            input=0;
         }
-        kucano=false;
-        input=0;
         izbor=3;
     }
     public void divideClick(ActionEvent actionEvent) {
+        if(kucano){
+            brojOperacije++;
+            if(brojOperacije==2){
+                equals(izbor);
+                brojOperacije=1;
+            }
+            else if(brojOperacije==1){
+                rez=input;
+                textBox.setText(rez+"");
+            }
+            input=0;
+        }
+        izbor=4;
 
     }
     public void equalsClick(ActionEvent actionEvent) {
-        System.out.println(izbor+"=");
         switch(izbor){
             case 1:
                 plus();
                 break;
+            case 2:
+                minus();
+                break;
             case 3:
                 product();
                 break;
+            case 4:
+                divide();
+                break;
 
         }
+        brojOperacije=0;
     }
     public void product(){
         rez*=lastNum;
         textBox.setText(rez+"");
         input=0;
         kucano=false;
-        prvi=false;
-        isA=false;
     }
     public void plus(){
         rez+=lastNum;
         textBox.setText(rez+"");
         input=0;
         kucano=false;
-        prvi=false;
-        isA=false;
     }
     public void minus(){
         rez-=lastNum;
         textBox.setText(rez+"");
         input=0;
         kucano=false;
-        prvi=false;
-        isA=false;
+    }
+    public void divide(){
+        if(lastNum!=0) {
+            rez /= lastNum;
+            textBox.setText(rez + "");
+
+        }else textBox.setText("Error!");
+        input = 0;
+        kucano = false;
+    }
+    public void equals(int izbor){
+        switch(izbor){
+            case 1:
+                plus();
+                break;
+            case 2:
+                minus();
+                break;
+            case 3:
+                product();
+                break;
+            case 4:
+                divide();
+                break;
+
+        }
     }
 
 }
