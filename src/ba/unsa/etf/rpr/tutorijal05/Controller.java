@@ -77,36 +77,61 @@ public class Controller {
 
     public void procClick(ActionEvent actionEvent) {
 
-    }
-    public void minusClick(ActionEvent actionEvent) {
-
-    }
-    public void plusClick(ActionEvent actionEvent) {
-
-    }
-    public void productClick(ActionEvent actionEvent) {
-        if(kucano){
-            if(prvi && !isA){rez=input; isA=true; textBox.setText(rez+""); input=0; return;}
-            rez*=input;
-            textBox.setText(rez+"");
         }
-        kucano=false;
-        input=0;
-        izbor=3;
-    }
-    public void divideClick(ActionEvent actionEvent) {
+        public void minusClick(ActionEvent actionEvent) {
 
-    }
-    public void equalsClick(ActionEvent actionEvent) {
-        product();
-    }
-    public void product(){
-        rez*=lastNum;
-        textBox.setText(rez+"");
-        input=0;
-        kucano=false;
-        prvi=false;
-        isA=false;
+        }
+        public void plusClick(ActionEvent actionEvent) {
+            if(kucano){
+                if(prvi && !isA){rez=input; isA=true; izbor=1; textBox.setText(rez+""); input=0; return;}
+                rez+=input;
+                textBox.setText(rez+"");
+            }
+            kucano=false;
+            input=0;
+            izbor=1;
+            System.out.println(izbor+"cl");
+        }
+        public void productClick(ActionEvent actionEvent) {
+            if(kucano){
+                if(prvi && !isA){rez=input; isA=true; izbor=3;textBox.setText(rez+""); input=0; return;}
+                rez*=input;
+                textBox.setText(rez+"");
+            }
+            kucano=false;
+            input=0;
+            izbor=3;
+        }
+        public void divideClick(ActionEvent actionEvent) {
+
+        }
+        public void equalsClick(ActionEvent actionEvent) {
+            System.out.println(izbor+"=");
+            switch(izbor){
+                case 1:
+                    plus();
+                    break;
+                case 3:
+                    product();
+                    break;
+
+            }
+        }
+        public void product(){
+            rez*=lastNum;
+            textBox.setText(rez+"");
+            input=0;
+            kucano=false;
+            prvi=false;
+            isA=false;
+        }
+        public void plus(){
+            rez+=lastNum;
+            textBox.setText(rez+"");
+            input=0;
+            kucano=false;
+            prvi=false;
+            isA=false;
     }
 
 }
