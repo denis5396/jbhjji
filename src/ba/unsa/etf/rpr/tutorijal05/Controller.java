@@ -2,76 +2,69 @@ package ba.unsa.etf.rpr.tutorijal05;
 
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
-    public TextField textBox;
+    public Label display;
     double input=0;
-    double a=0;
-    double b=0;
-    boolean isA=false;
-    boolean isB=false;
     int izbor=0;
     double rez=0;
     double lastNum=0;
-    double proiz=1;
     boolean kucano=false;
-
-    boolean unesenPrvi=false;
+    double epsilon=0.001;
     int brojOperacije=0;
+    int brdecimala=0;
+    private String dajRez(){
+        if(Math.abs(rez-(int)rez)<epsilon){return ""+(int)rez;}
+        return rez+"";
+    }
+    private String dajInput(){
+        if(Math.abs(input-(int)input)<epsilon){return ""+(int)input;}
+        return input+"";
+    }
     public void nineClick(ActionEvent actionEvent) {
-        input=10*input+9;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(9);
     }
     public void eightClick(ActionEvent actionEvent) {
-        input=10*input+8;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(8);
     }
     public void sevenClick(ActionEvent actionEvent) {
-        input=10*input+7;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(7);
     }
     public void sixClick(ActionEvent actionEvent) {
-        input=10*input+6;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(6);
     }
     public void fiveClick(ActionEvent actionEvent) {
-        input=10*input+5;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(5);
     }
     public void fourClick(ActionEvent actionEvent) {
-        input=10*input+4;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(4);
     }
     public void threeClick(ActionEvent actionEvent) {
-        input=10*input+3;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(3);
     }
     public void twoClick(ActionEvent actionEvent) {
-        input=10*input+2;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(2);
     }
     public void oneClick(ActionEvent actionEvent) {
-        input=10*input+1;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(1);
     }
     public void zeroClick(ActionEvent actionEvent) {
-        input=10*input+0;
-        postavi(input);
-        textBox.setText(input+"");
+        postavi(0);
     }
-    private void postavi(double input){
+    public void dotClick(ActionEvent actionEvent){
+        if(brdecimala==0)brdecimala=1;
+    }
+    private void postavi(int br){
+        if(brdecimala==0){
+            input=10*input +br;
+        }else{
+            input+=(double)br/Math.pow(10,brdecimala);
+            brdecimala++;
+        }
+        display.setText(dajInput());
         kucano=true;
-       // prvi=true;
         lastNum=input;
     }
 
@@ -80,6 +73,7 @@ public class Controller {
     }
     public void minusClick(ActionEvent actionEvent) {
         if(kucano){
+            brdecimala=0;
             brojOperacije++;
             if(brojOperacije==2){
                 equals(izbor);
@@ -87,7 +81,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                textBox.setText(rez+"");
+                display.setText(dajRez());
             }
             input=0;
         }
@@ -95,6 +89,7 @@ public class Controller {
     }
     public void plusClick(ActionEvent actionEvent) {
         if(kucano){
+            brdecimala=0;
             brojOperacije++;
             if(brojOperacije==2){
                 equals(izbor);
@@ -102,7 +97,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                textBox.setText(rez+"");
+                display.setText(dajRez());
             }
             input=0;
         }
@@ -110,6 +105,7 @@ public class Controller {
     }
     public void productClick(ActionEvent actionEvent) {
         if(kucano){
+            brdecimala=0;
             brojOperacije++;
             if(brojOperacije==2){
                 equals(izbor);
@@ -117,7 +113,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                textBox.setText(rez+"");
+                display.setText(dajRez());
             }
             input=0;
         }
@@ -125,6 +121,7 @@ public class Controller {
     }
     public void divideClick(ActionEvent actionEvent) {
         if(kucano){
+            brdecimala=0;
             brojOperacije++;
             if(brojOperacije==2){
                 equals(izbor);
@@ -132,7 +129,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                textBox.setText(rez+"");
+                display.setText(dajRez());
             }
             input=0;
         }
@@ -140,6 +137,7 @@ public class Controller {
 
     }
     public void equalsClick(ActionEvent actionEvent) {
+        brdecimala=0;
         switch(izbor){
             case 1:
                 plus();
@@ -157,30 +155,31 @@ public class Controller {
         }
         brojOperacije=0;
     }
+
     public void product(){
         rez*=lastNum;
-        textBox.setText(rez+"");
+        display.setText(dajRez());
         input=0;
         kucano=false;
     }
     public void plus(){
         rez+=lastNum;
-        textBox.setText(rez+"");
+        display.setText(dajRez());
         input=0;
         kucano=false;
     }
     public void minus(){
         rez-=lastNum;
-        textBox.setText(rez+"");
+        display.setText(dajRez());
         input=0;
         kucano=false;
     }
     public void divide(){
         if(lastNum!=0) {
             rez /= lastNum;
-            textBox.setText(rez + "");
+            display.setText(rez + "");
 
-        }else textBox.setText("Error!");
+        }else display.setText("Error!");
         input = 0;
         kucano = false;
     }

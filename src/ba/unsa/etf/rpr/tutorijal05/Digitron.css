@@ -1,9 +1,6 @@
-#procButton{
-   // -fx-background-color: lightskyblue;
-}
-#textBox{
+#display{
     -fx-background-color: greenyellow;
 }
-#equalsButton{
+#equalsBtn{
     -fx-background-color: lightsalmon;
 }
