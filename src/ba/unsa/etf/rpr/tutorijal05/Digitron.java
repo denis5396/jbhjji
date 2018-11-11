@@ -7,6 +7,7 @@ public class Digitron {
     private double rezultat=0;
     private double operand=0;
     private int fja=0;
+    public boolean prvi=false;
     public void setOperand(double x){
         operand=x;
     }
