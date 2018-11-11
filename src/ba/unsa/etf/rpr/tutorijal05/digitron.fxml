@@ -8,50 +8,49 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="5.0" prefHeight="208.0" prefWidth="205.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.tutorijal05.Controller">
+<GridPane depthTest="DISABLE" hgap="5.0" prefHeight="208.0" prefWidth="205.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.tutorijal05.Controller">
     <stylesheets>
         <URL value="@Digitron.css" />
     </stylesheets>
     <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" prefWidth="5.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="ALWAYS" maxWidth="5.0" minWidth="5.0" prefWidth="5.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <opaqueInsets>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      <Insets />
    </opaqueInsets>
    <children>
-      <TextField fx:id="textBox" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1" />
-      <Button id="procButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#procClick" text="\%" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-      <Button id="7Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#sevenClick" text="7" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-      <Button id="4Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#fourClick" text="4" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
-      <Button id="1Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#oneClick" text="1" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
-      <Button id="0Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#zeroClick" text="0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
-       <Button id="dotButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="." GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS" />
+      <TextField fx:id="textBox" editable="false" GridPane.columnSpan="4" />
+      <Button id="procButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#procClick" text="\%" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button id="7Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#sevenClick" text="7" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <Button id="4Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#fourClick" text="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Button id="1Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#oneClick" text="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+      <Button id="0Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#zeroClick" text="0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
+       <Button id="dotButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="." GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
 
-       <Button id="divideButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#divideClick" text="/" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-      <Button id="8Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#eightClick" text="8" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-      <Button id="5Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#fiveClick" text="5" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
-      <Button id="2Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#twoClick" text="2" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
-      <Button id="productButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#productClick" text="x" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-      <Button id="9Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#nineClick" text="9" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
-      <Button id="6Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#sixClick" text="6" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
-      <Button id="3Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#threeClick" text="3" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS" />
-      <Button id="minusButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#minusClick" text="-" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-      <Button id="plusButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#plusClick" text="+" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
-      <Button id="equalsButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#equalsClick" text="=" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
+       <Button id="divideButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#divideClick" text="/" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button id="8Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#eightClick" text="8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <Button id="5Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#fiveClick" text="5" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Button id="2Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#twoClick" text="2" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+      <Button id="productButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#productClick" text="x" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button id="9Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#nineClick" text="9" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+      <Button id="6Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#sixClick" text="6" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+      <Button id="3Button" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#threeClick" text="3" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS" />
+      <Button id="minusButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#minusClick" text="-" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Button id="plusButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#plusClick" text="+" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
+      <Button id="equalsButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#equalsClick" text="=" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </GridPane>
