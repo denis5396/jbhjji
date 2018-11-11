@@ -1,41 +1,58 @@
 package ba.unsa.etf.rpr.tutorijal05;
 
+import java.util.function.Function;
+
 public class Digitron {
-    private double operand1=0;
-    private double operand2=0;
-  //  private double rezultat=0;
-    //private boolean rezultatSet=false;
-    private boolean inf=false;
-    public void setOperand1(double x){
-        operand1=x;
-    }
-    public void setOperand2(double x){
-        operand2=x;
-    }
-    public double getOperand1(double x){
-        return operand1;
-    }
-    public double getOperand2(double x){
-        return operand2;
-    }
-   /* public double gerRezultat(double x){
-        return rezultat;
-    }*/
-    public void plus(){
 
-        operand1=operand1+operand2;
+    private double rezultat=0;
+    private double operand=0;
+    private int fja=0;
+    public void setOperand(double x){
+        operand=x;
     }
-    public void minus(){
-
-        operand1=operand1-operand2;
+    public double getRez(double x){
+        return  rezultat;
     }
-    public void product(){
-        operand1=operand1*operand2;
-
+    public void plus(double x){
+        rezultat+=x;
+        operand=x;
+        fja=1;
+        prvi=true;
     }
-    public void divide(){
-        if(operand2!=0) {
-            operand1 = operand1 / operand2;
-        }else inf=true;
+    public void minus(double x){
+        rezultat-=x;
+        operand=x;
+        fja=2;
+        prvi=true;
+    }
+    public void product(double x){
+        rezultat *= x;
+        operand=x;
+        fja = 3;
+    }
+    public void divide(double x){
+        if(x!=0) {
+            rezultat/=x;
+            operand=x;
+        }else {
+            throw new IllegalArgumentException("Ne moze se dijeliti sa nulom!");
+        }
+        fja=4;
+    }
+    public void jednako(){
+        switch(fja){
+            case 1:
+                plus(operand);
+                break;
+            case 2:
+                minus(operand);
+                break;
+            case 3:
+                product(operand);
+                break;
+            case 4:
+                divide(operand);
+                break;
+        }
     }
 }
