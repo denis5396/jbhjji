@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -75,15 +74,7 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("579", display.getText());
     }
-    @Test
-    public void dijeljenjeNulom (FxRobot robot) {
-        display = robot.lookup("#display").queryAs(Label.class);
-        robot.clickOn("#btn1");
-        robot.clickOn("#divideBtn");
-        robot.clickOn("#btn0");
-        robot.clickOn("#equalsBtn");
-        assertEquals("Error!", display.getText());
-    }
+
     @Test
     public void dotBtn (FxRobot robot) {
         display = robot.lookup("#display").queryAs(Label.class);

@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal05;
 
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -15,6 +16,12 @@ public class Controller {
     double epsilon=0.001;
     int brojOperacije=0;
     int brdecimala=0;
+    private SimpleStringProperty disp;
+
+    public Controller() {
+        disp = new SimpleStringProperty("0");
+    }
+
     private String dajRez(){
         if(Math.abs(rez-(int)rez)<epsilon){return ""+(int)rez;}
         return rez+"";
