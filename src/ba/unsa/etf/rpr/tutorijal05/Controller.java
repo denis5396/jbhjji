@@ -18,10 +18,19 @@ public class Controller {
     int brdecimala=0;
     private SimpleStringProperty disp;
 
-    public Controller() {
-        disp = new SimpleStringProperty("0");
+    public SimpleStringProperty dispProperty() {
+        return disp;
     }
-
+    public String getDisp() {
+        return disp.get();
+    }
+    private void setText(String s){
+        disp.set(s);
+    }
+    public Controller() {
+        disp = new SimpleStringProperty("");
+        setText("0");
+    }
     private String dajRez(){
         if(Math.abs(rez-(int)rez)<epsilon){return ""+(int)rez;}
         return rez+"";
@@ -70,7 +79,7 @@ public class Controller {
             input+=(double)br/Math.pow(10,brdecimala);
             brdecimala++;
         }
-        display.setText(dajInput());
+        setText(dajInput());
         kucano=true;
         lastNum=input;
     }
@@ -88,7 +97,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                display.setText(dajRez());
+                setText(dajRez());
             }
             input=0;
         }
@@ -104,7 +113,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                display.setText(dajRez());
+                setText(dajRez());
             }
             input=0;
         }
@@ -120,7 +129,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                display.setText(dajRez());
+                setText(dajRez());
             }
             input=0;
         }
@@ -136,7 +145,7 @@ public class Controller {
             }
             else if(brojOperacije==1){
                 rez=input;
-                display.setText(dajRez());
+                setText(dajRez());
             }
             input=0;
         }
@@ -165,28 +174,27 @@ public class Controller {
 
     public void product(){
         rez*=lastNum;
-        display.setText(dajRez());
+        setText(dajRez());
         input=0;
         kucano=false;
     }
     public void plus(){
         rez+=lastNum;
-        display.setText(dajRez());
+        setText(dajRez());
         input=0;
         kucano=false;
     }
     public void minus(){
         rez-=lastNum;
-        display.setText(dajRez());
+        setText(dajRez());
         input=0;
         kucano=false;
     }
     public void divide(){
         if(lastNum!=0) {
             rez /= lastNum;
-            display.setText(rez + "");
-
-        }else display.setText("Error!");
+            setText(rez+"");
+        }else setText("Error!");
         input = 0;
         kucano = false;
     }

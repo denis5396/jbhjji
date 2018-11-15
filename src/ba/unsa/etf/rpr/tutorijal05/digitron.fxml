@@ -48,7 +48,7 @@
       <Button id="minusBtn" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#minusClick" text="-" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
       <Button id="plusBtn" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#plusClick" text="+" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
       <Button id="equalsBtn" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#equalsClick" text="=" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
-      <Label fx:id="display" maxHeight="Infinity" maxWidth="Infinity" text="0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
+      <Label fx:id="display" maxHeight="Infinity" maxWidth="Infinity" text="${controller.disp}" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
