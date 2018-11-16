@@ -7,15 +7,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
-    public Label display;
-    double input=0;
-    int izbor=0;
-    double rez=0;
-    double lastNum=0;
-    boolean kucano=false;
-    double epsilon=0.001;
-    int brojOperacije=0;
-    int brdecimala=0;
+    private double input=0;
+    private int izbor=0;
+    private double rez=0;
+    private double lastNum=0;
+    private boolean kucano=false;
+    private double epsilon=0.001;
+    private int brojOperacije=0;
+    private int brdecimala=0;
     private SimpleStringProperty disp;
 
     public SimpleStringProperty dispProperty() {
@@ -87,6 +86,11 @@ public class Controller {
     public void procClick(ActionEvent actionEvent) {
 
     }
+
+
+
+
+
     public void minusClick(ActionEvent actionEvent) {
         if(kucano){
             brdecimala=0;
@@ -193,7 +197,7 @@ public class Controller {
     public void divide(){
         if(lastNum!=0) {
             rez /= lastNum;
-            setText(rez+"");
+            setText(dajRez());
         }else setText("Error!");
         input = 0;
         kucano = false;

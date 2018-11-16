@@ -26,6 +26,28 @@ class MainTest {
         stage.toFront();
     }
 
+
+
+
+    @Test
+    public void cijeliBroj (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn8");
+        robot.clickOn("#divideBtn");
+        robot.clickOn("#btn4");
+        robot.clickOn("#equalsBtn");
+        assertEquals("2", display.getText());
+    }
+    @Test
+    public void realanBroj (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#divideBtn");
+        robot.clickOn("#btn4");
+        robot.clickOn("#equalsBtn");
+        assertEquals("1.25", display.getText());
+    }
+
     @Test
     public void startWithZero (FxRobot robot) {
         display = robot.lookup("#display").queryAs(Label.class);
